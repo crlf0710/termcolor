@@ -19,3 +19,9 @@ bench = false
 
 [target.'cfg(windows)'.dependencies]
 wincolor = { version = "1", path = "wincolor" }
+
+[dependencies]
+std = { version = "1.0.0", optional = true, package = 'rustc-test-workspace-std' }
+
+[features]
+rustc-dep-of-test = ['std', 'wincolor/rustc-dep-of-test']

@@ -24,9 +24,7 @@ println!("This text will be normal.");
 #![deny(missing_docs)]
 
 #[cfg(windows)]
-extern crate winapi;
-#[cfg(windows)]
-extern crate winapi_util;
+mod winapi_inline;
 
 #[cfg(windows)]
 pub use win::*;

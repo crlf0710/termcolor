@@ -1,14 +1,16 @@
 use std::io;
 
-use winapi::shared::minwindef::{WORD};
-use winapi::um::wincon::{
+use crate::winapi_inline as winapi;
+mod winutil;
+
+use self::winapi::shared::minwindef::{WORD};
+use self::winapi::um::wincon::{
     self,
     FOREGROUND_BLUE as FG_BLUE,
     FOREGROUND_GREEN as FG_GREEN,
     FOREGROUND_RED as FG_RED,
     FOREGROUND_INTENSITY as FG_INTENSITY,
 };
-use winapi_util as winutil;
 
 const FG_CYAN: WORD = FG_BLUE | FG_GREEN;
 const FG_MAGENTA: WORD = FG_BLUE | FG_RED;
